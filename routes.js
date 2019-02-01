@@ -2,7 +2,7 @@ git pusconst express = require('express');
 const {Direccion, Paquete}= require('./models');
 
 const router = express.Router();
-
+ 
 // ver todos las direcciones
 router.get('/plantas',(req,res) => {
     Planta.find({},(err,data)=>{
