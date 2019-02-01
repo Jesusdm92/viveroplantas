@@ -4,7 +4,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const routes = require('./routes');
-const config = require('./config');
+//const config = require('./config');
 
 const app = express();
 
