@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-const Direccion = mongoose.model('Planta',{
+const Planta = mongoose.model('Planta',{
     nombre: String,
     color: String,
     precio: Number,
 });
 
-const Paquete = mongoose.model('Tienda',{
+const Tienda = mongoose.model('Tienda',{
     nombre_tienda: String,
     direccion: String,
     ciudad: String

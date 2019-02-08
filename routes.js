@@ -1,17 +1,17 @@
-git pusconst express = require('express');
+const express = require('express');
 const {Direccion, Paquete}= require('./models');
 
 const router = express.Router();
  
 // ver todos las direcciones
-router.get('/plantas',(req,res) => {
+router.get('/api/plantas',(req,res) => {
     Planta.find({},(err,data)=>{
         if(err) res.json({error:err});
         else res.json(data);
     });
 });
 
-router.get('/tiendas',(req,res) => {
+router.get('/api/tiendas',(req,res) => {
     Tienda.find({},(err,data)=>{
         if(err) res.json({error:err});
         else res.json(data);
@@ -19,14 +19,14 @@ router.get('/tiendas',(req,res) => {
 });
 
 //BUSCAR UNO
-router.get('/plantas/:id', (req,res)=>{
+router.get('/api/plantas/:id', (req,res)=>{
      Planta.findOne({_id: req.params.id},(err,data)=>{
         if(err) res.json({error:err});
         else res.json(data);
     });
 });
 
-router.get('/tiendas/:id', (req,res)=>{
+router.get('/api/tiendas/:id', (req,res)=>{
     Tienda.findOne({_id: req.params.id},(err,data)=>{
         if(err) res.json({error:err});
         else res.json(data);
@@ -34,14 +34,14 @@ router.get('/tiendas/:id', (req,res)=>{
 });
 
 //BORRAR
-router.delete('/plantas/:id', (req,res)=>{
+router.delete('/api/plantas/:id', (req,res)=>{
     Planta.findOneAndRemove({_id: req.params.id},(err,data)=>{
         if(err) res.json({error:err});
         else res.json(data);
     });
 });
 
-router.delete('/Tiendas/:id', (req,res)=>{
+router.delete('/api/Tiendas/:id', (req,res)=>{
     Tienda.findOneAndRemove({_id: req.params.id},(err,data)=>{
         if(err) res.json({error:err});
         else res.json(data);
@@ -49,7 +49,7 @@ router.delete('/Tiendas/:id', (req,res)=>{
 });
 
 //ACTUALIZAR
-router.put('/plantas/:id', (req,res)=>{
+router.put('/api/plantas/:id', (req,res)=>{
     Planta.findOneAndUpdate(
         {_id_planta: req.params.id},
         {$set: {nombre: req.body.nombre,
@@ -61,7 +61,7 @@ router.put('/plantas/:id', (req,res)=>{
     });
 });
 
-router.put('/tiendas/:id', (req,res)=>{
+router.put('/api/tiendas/:id', (req,res)=>{
     Direccion.findOneAndUpdate(
         {_id_tienda: req.params.id},
         {$set: {nombre_tienda: req.body.nombreTienda,
@@ -74,7 +74,7 @@ router.put('/tiendas/:id', (req,res)=>{
 });
 
 //INSERTAR
-router.post('/plantas', (req,res)=>{
+router.post('/api/plantas', (req,res)=>{
     const planta = new Planta({
         nombre: req.body.nombre,
         color: req.body.color, 
@@ -85,7 +85,7 @@ router.post('/plantas', (req,res)=>{
     });
 });
 
-router.post('/tiendas', (req,res)=>{
+router.post('/api/tiendas', (req,res)=>{
     const tienda = new Tienda({
         nombre_tienda: req.body.nombreTienda,
         peso: req.body.peso,
