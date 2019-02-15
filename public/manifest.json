@@ -1,12 +1,12 @@
 {
-  "name": "Tienda para ejemplo didáctico",
-  "short_name": "Tienda",
+  "name": "Vivero de plantas",
+  "short_name": "Vivero",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",
-  "icons": [
+  "icons": [ 
     {
       "src": "/images/icons/icon-72x72.png",
       "sizes": "72x72",
