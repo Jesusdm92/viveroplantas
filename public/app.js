@@ -31,8 +31,8 @@ let index = `
 window.addEventListener('load', function () {
 
     let i = document.getElementById('inicio');
-    let a = document.getElementById('articulos');
-    let c = document.getElementById('clientes');
+    let a = document.getElementById('Planta');
+    let c = document.getElementById('Tienda');
 
     i.innerHTML = index;
     i.style.display = 'block';
@@ -44,14 +44,14 @@ window.addEventListener('load', function () {
     });
 
     document.getElementById('menu-articulos').addEventListener('click', function (e) {
-        verDocumentos('articulos');
+        verDocumentos('Planta');
         a.style.display = 'block';
         i.style.display = 'none';
         c.style.display = 'none';  c.innerHTML = '';       
     });
 
     document.getElementById('menu-clientes').addEventListener('click', function (e) {
-        verDocumentos('clientes');
+        verDocumentos('Tienda');
         c.style.display = 'block';
         i.style.display = 'none';  
         a.style.display = 'none';  a.innerHTML = '';
@@ -172,7 +172,8 @@ function json2table(collection, jsonData, classes) {
 <button class="insertar" title="Insertar" onclick="
     insertar('${collection}',  { 
         ${colNames[0]}: document.getElementById('${collection}.${colNames[0]}').value,
-        ${colNames[1]}: document.getElementById('${collection}.${colNames[1]}').value
+        ${colNames[1]}: document.getElementById('${collection}.${colNames[1]}').value,
+        ${colNames[2]}: document.getElementById('${collection}.${colNames[2]}').value
     }) ">
 <span>✏️</span>
 </button>
@@ -182,7 +183,8 @@ function json2table(collection, jsonData, classes) {
 <button class="modificar" title="Modificar" onclick="
     modificar ('${collection}', '${fila._id}', {
         ${colNames[0]}: document.getElementById('${fila._id}.${colNames[0]}').value, 
-        ${colNames[1]}: document.getElementById('${fila._id}.${colNames[1]}').value 
+        ${colNames[1]}: document.getElementById('${fila._id}.${colNames[1]}').value,
+        ${colNames[2]}: document.getElementById('${fila._id}.${colNames[2]}').value
     }) ">
 <span>📝</span>
 </button>
