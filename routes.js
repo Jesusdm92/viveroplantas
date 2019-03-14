@@ -19,7 +19,7 @@ router.get('/Tienda',(req,res) => {
 });
 
 //BUSCAR UNO
-router.get('/plantas/:id', (req,res)=>{
+router.get('/Planta/:id', (req,res)=>{
      Planta.findOne({_id: req.params.id},(err,data)=>{
         if(err) res.json({error:err});
         else res.json(data);
@@ -51,7 +51,7 @@ router.delete('/Tienda/:id', (req,res)=>{
 //ACTUALIZAR
 router.put('/Planta/:id', (req,res)=>{
     Planta.findOneAndUpdate(
-        {_id_planta: req.params.id},
+        {_id: req.params.id},
         {$set: {nombre: req.body.nombre,
                 color: req.body.color, 
                 precio: req.body.precio}},
@@ -62,10 +62,10 @@ router.put('/Planta/:id', (req,res)=>{
 });
 
 router.put('/Tienda/:id', (req,res)=>{
-    Direccion.findOneAndUpdate(
-        {_id_tienda: req.params.id},
-        {$set: {nombre_tienda: req.body.nombreTienda,
-                peso: req.body.peso,
+    Tienda.findOneAndUpdate(
+        {_id: req.params.id},
+        {$set: {nombre_tienda: req.body.nombre_tienda,
+                direccion: req.body.direccion,
                 ciudad: req.body.ciudad}},
         (err,data)=>{
         if(err) res.json({error:err});

@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const Planta = mongoose.model('Planta',{
     nombre: String,
     color: String,
-    precio: Number,
+    precio: Number
+    
 });
 
 const Tienda = mongoose.model('Tienda',{
