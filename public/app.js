@@ -21,8 +21,8 @@ let index = `
          <br>
          <ul style="padding-left: 50px">
            <li><b>Inicio</b>: Esta página con información.</li>
-           <li><b>Artículos</b>: Permite realizar operaciones CRUD sobre los artículos de la BD. </li>
-           <li><b>Clientes</b>: Permite realizar operaciones CRUD sobre los clientes de la BD.</li>
+           <li><b>Plantas</b>: Permite realizar operaciones CRUD sobre las plantas de la BD. </li>
+           <li><b>Tiendas</b>: Permite realizar operaciones CRUD sobre las tiendas de la BD.</li>
          </ul>
      </div>`;
 

@@ -195,11 +195,11 @@ label#menu-inicio-label > span::after {
 }
 
 label#menu-articulos-label > span::after {
-  content: " Artículos"; 
+  content: " Plantas"; 
 }
 
 label#menu-clientes-label > span::after {
-  content: " Clientes"; 
+  content: " Tiendas"; 
 }
 
 

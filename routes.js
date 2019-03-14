@@ -79,7 +79,7 @@ router.post('/Planta', (req,res)=>{
         nombre: req.body.nombre,
         color: req.body.color, 
         precio: req.body.precio});
-        direccion.save((err,data)=>{
+        planta.save((err,data)=>{
             if(err) res.json({error:err});
             else res.json(data);
     });
@@ -87,10 +87,10 @@ router.post('/Planta', (req,res)=>{
 
 router.post('/Tienda', (req,res)=>{
     const tienda = new Tienda({
-        nombre_tienda: req.body.nombreTienda,
-        peso: req.body.peso,
+        nombre_tienda: req.body.nombre_tienda,
+        direccion: req.body.direccion,
         ciudad: req.body.ciudad});
-        paquete.save((err,data)=>{
+        tienda.save((err,data)=>{
             if(err) res.json({error:err});
             else res.json(data);
     });
